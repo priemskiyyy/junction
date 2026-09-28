@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "exactOptionalPropertyTypes": false,
+    "verbatimModuleSyntax": false,
+    "paths": {
+      "src/*": ["./src/*"],
+      "react-native-appsflyer": [
+        "../../../node_modules/react-native-appsflyer-v6"
+      ]
+    }
+  },
+  "include": ["src/**/*.contracts.ts"],
+  "exclude": ["node_modules", "dist"]
+}
