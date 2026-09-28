@@ -1,0 +1,32 @@
+{
+  "name": "example-shared",
+  "private": true,
+  "type": "module",
+  "description": "The Intent Lab shared by every example: Folio's world, the simulated device and its SDKs, the lab storage, Folio's Junction, the lab runtime, the formatting and the Tailwind theme.",
+  "exports": {
+    "./device/*": "./device/*.ts",
+    "./folio/*": "./folio/*.ts",
+    "./formatting/*": "./formatting/*.ts",
+    "./junction/*": "./junction/*.ts",
+    "./lab/*": "./lab/*.ts",
+    "./storage/*": "./storage/*.ts",
+    "./types/*": "./types/*.ts",
+    "./utils/*": "./utils/*.ts",
+    "./ui/theme.css": "./ui/theme.css",
+    "./ui/constants/*": "./ui/constants/*.ts",
+    "./ui/styles/*": "./ui/styles/*.ts"
+  },
+  "scripts": {
+    "lint:typescript": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@priemskiyyy/junction": "workspace:*",
+    "@priemskiyyy/junction-adjust": "workspace:*",
+    "@priemskiyyy/junction-expo-notifications": "workspace:*",
+    "@priemskiyyy/junction-expo-quick-actions": "workspace:*",
+    "@priemskiyyy/junction-react-native": "workspace:*",
+    "class-variance-authority": "0.7.1",
+    "ts-pattern": "5.9.0",
+    "zod": "4.1.12"
+  }
+}
