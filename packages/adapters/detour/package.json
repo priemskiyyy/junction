@@ -1,0 +1,63 @@
+{
+  "name": "@priemskiyyy/junction-detour",
+  "version": "0.1.0",
+  "description": "Detour entry points for Junction: every link Detour resolves, the deferred one after an install included, over the Detour module you inject.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priemskiyyy/junction.git",
+    "directory": "packages/adapters/detour"
+  },
+  "bugs": {
+    "url": "https://github.com/priemskiyyy/junction/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint:typescript": "tsc --noEmit -p .",
+    "lint:eslint": "eslint src",
+    "test:unit": "vitest run --root ../../.. --project detour"
+  },
+  "peerDependencies": {
+    "@priemskiyyy/junction": ">=0.1.0 <0.2",
+    "@swmansion/react-native-detour": ">=2.3.1 <3"
+  },
+  "peerDependenciesMeta": {
+    "@swmansion/react-native-detour": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@priemskiyyy/junction": "workspace:*"
+  },
+  "keywords": [
+    "detour",
+    "react-native-detour",
+    "react-native",
+    "expo",
+    "ios",
+    "android",
+    "typescript",
+    "junction",
+    "deep-linking"
+  ],
+  "homepage": "https://priemskiyyy.github.io/junction/"
+}
