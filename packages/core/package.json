@@ -1,0 +1,71 @@
+{
+  "name": "@priemskiyyy/junction",
+  "version": "0.1.0",
+  "description": "Typed application intents for React Native and TypeScript: entry points captured once, validated at the boundary, and consumed by the feature that owns them, once it is ready.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priemskiyyy/junction.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/priemskiyyy/junction/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./mock": {
+      "types": "./dist/mock.d.ts",
+      "import": "./dist/mock.js",
+      "default": "./dist/mock.js"
+    },
+    "./testing": {
+      "types": "./dist/testing.d.ts",
+      "import": "./dist/testing.js",
+      "default": "./dist/testing.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint:typescript": "tsc --noEmit -p .",
+    "lint:eslint": "eslint src",
+    "test:unit": "vitest run --root ../.. --project core"
+  },
+  "keywords": [
+    "deep-linking",
+    "universal-links",
+    "app-links",
+    "deferred-deep-linking",
+    "intents",
+    "react-native",
+    "expo",
+    "branch",
+    "appsflyer",
+    "typescript",
+    "junction"
+  ],
+  "homepage": "https://priemskiyyy.github.io/junction/",
+  "peerDependencies": {
+    "vitest": ">=4.0.0 <5"
+  },
+  "peerDependenciesMeta": {
+    "vitest": {
+      "optional": true
+    }
+  }
+}
