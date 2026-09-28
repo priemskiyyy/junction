@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "Intent Lab",
+    "slug": "junction-intent-lab",
+    "version": "0.1.0",
+    "scheme": "folio",
+    "orientation": "portrait",
+    "platforms": ["ios", "android", "web"],
+    "ios": {
+      "bundleIdentifier": "dev.junction.example"
+    },
+    "android": {
+      "package": "dev.junction.example"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

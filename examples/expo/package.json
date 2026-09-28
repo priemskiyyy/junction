@@ -1,0 +1,30 @@
+{
+  "name": "example-expo",
+  "private": true,
+  "main": "index.tsx",
+  "scripts": {
+    "dev": "expo start",
+    "ios": "expo start --ios",
+    "android": "expo start --android",
+    "web": "expo start --web",
+    "build": "expo export --platform web --output-dir dist",
+    "build:native": "expo export --platform ios --platform android --output-dir ../../.artifacts/expo-native",
+    "lint:typescript": "tsc --noEmit -p ."
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "57.0.16",
+    "@priemskiyyy/junction": "workspace:*",
+    "@priemskiyyy/junction-react": "workspace:*",
+    "example-shared": "workspace:*",
+    "expo": "57.0.25",
+    "expo-linking": "57.0.11",
+    "phosphor-react-native": "3.0.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "react-native": "0.86.3",
+    "react-native-safe-area-context": "5.7.0",
+    "react-native-svg": "15.15.4",
+    "react-native-web": "0.21.2",
+    "ts-pattern": "5.9.0"
+  }
+}
