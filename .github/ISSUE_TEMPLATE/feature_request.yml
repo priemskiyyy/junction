@@ -1,0 +1,18 @@
+name: Feature request
+description: Propose a source, an option or a change of behavior.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does it solve?
+      description: Describe the entry point or the application flow that Junction handles badly today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the behavior you want. For a new source, name the provider SDK, its version, and how it reports a launch entry point, later ones and errors.
+    validations:
+      required: true
