@@ -1,0 +1,62 @@
+{
+  "name": "@priemskiyyy/junction-expo-notifications",
+  "version": "0.1.0",
+  "description": "Expo notification entry points for Junction: every press on a notification or one of its actions, the one that launched the app included, over the expo-notifications module you inject.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priemskiyyy/junction.git",
+    "directory": "packages/adapters/expo-notifications"
+  },
+  "bugs": {
+    "url": "https://github.com/priemskiyyy/junction/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint:typescript": "tsc --noEmit -p .",
+    "lint:eslint": "eslint src",
+    "test:unit": "vitest run --root ../../.. --project expo-notifications"
+  },
+  "peerDependencies": {
+    "@priemskiyyy/junction": ">=0.1.0 <0.2",
+    "expo-notifications": ">=57.0.0 <58"
+  },
+  "peerDependenciesMeta": {
+    "expo-notifications": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@priemskiyyy/junction": "workspace:*"
+  },
+  "keywords": [
+    "expo-notifications",
+    "expo",
+    "notifications",
+    "ios",
+    "android",
+    "typescript",
+    "junction",
+    "deep-linking"
+  ],
+  "homepage": "https://priemskiyyy.github.io/junction/"
+}
