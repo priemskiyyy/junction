@@ -1,0 +1,66 @@
+{
+  "name": "@priemskiyyy/junction-react-native",
+  "version": "0.1.0",
+  "description": "React Native and Expo entry points for Junction: Universal Links, App Links and custom-scheme URLs, including the one that launched the app, over the Linking module you inject.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priemskiyyy/junction.git",
+    "directory": "packages/adapters/react-native"
+  },
+  "bugs": {
+    "url": "https://github.com/priemskiyyy/junction/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint:typescript": "tsc --noEmit -p . && tsc --noEmit -p tsconfig.strict.json",
+    "lint:eslint": "eslint src",
+    "test:unit": "vitest run --root ../../.. --project react-native"
+  },
+  "peerDependencies": {
+    "@priemskiyyy/junction": ">=0.1.0 <0.2",
+    "expo-linking": ">=6.0.0 <58",
+    "react-native": ">=0.65.0 <0.88"
+  },
+  "peerDependenciesMeta": {
+    "expo-linking": {
+      "optional": true
+    },
+    "react-native": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@priemskiyyy/junction": "workspace:*"
+  },
+  "keywords": [
+    "react-native",
+    "expo-linking",
+    "expo",
+    "ios",
+    "android",
+    "typescript",
+    "junction",
+    "deep-linking"
+  ],
+  "homepage": "https://priemskiyyy.github.io/junction/"
+}
