@@ -1,0 +1,10 @@
+packages:
+  - packages/*
+  - packages/adapters/*
+  - packages/integrations/*
+  - examples/*
+
+allowBuilds:
+  # The provider SDKs are here for their types and tests only. None of their
+  # install scripts, binaries or generated code is ever run.
+  esbuild: true
