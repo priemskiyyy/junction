@@ -1,0 +1,81 @@
+name: docs-deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "package.json"
+      - "pnpm-lock.yaml"
+      - "pnpm-workspace.yaml"
+      - ".github/actions/setup/**"
+      - ".github/workflows/docs.deploy.yml"
+      - "docs/**"
+      - "packages/**"
+      - "examples/**"
+      - "scripts/verify-docs.mjs"
+      - "scripts/build-demo.mjs"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  TZ: UTC
+
+# Let a running deployment finish; queue at most one more behind it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+# The docs are built and checked on every push, and deployed once the
+# repository is public: Pages needs a public repository on the current plan.
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DOCS_SITE_URL: https://priemskiyyy.github.io/junction/
+      DOCS_BASE_PATH: /junction/
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Setup workspace
+        uses: ./.github/actions/setup
+
+      - name: Build packages for the hosted Intent Lab
+        run: pnpm build
+
+      - name: Check documentation config types
+        run: pnpm lint:docs
+
+      - name: Build documentation
+        env:
+          DOCS_REPOSITORY_URL: https://github.com/${{ github.repository }}
+        run: pnpm build:docs
+
+      - name: Verify links, anchors and metadata
+        run: pnpm verify:docs
+
+      - name: Upload artifact
+        if: ${{ !github.event.repository.private }}
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  deploy:
+    needs: build
+    if: ${{ !github.event.repository.private }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
