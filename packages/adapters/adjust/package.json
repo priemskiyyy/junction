@@ -1,0 +1,62 @@
+{
+  "name": "@priemskiyyy/junction-adjust",
+  "version": "0.1.0",
+  "description": "Adjust entry points for Junction: the deferred deep link a new install came through, over the AdjustConfig you inject.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priemskiyyy/junction.git",
+    "directory": "packages/adapters/adjust"
+  },
+  "bugs": {
+    "url": "https://github.com/priemskiyyy/junction/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint:typescript": "tsc --noEmit -p .",
+    "lint:eslint": "eslint src",
+    "test:unit": "vitest run --root ../../.. --project adjust"
+  },
+  "peerDependencies": {
+    "@priemskiyyy/junction": ">=0.1.0 <0.2",
+    "react-native-adjust": ">=5.8.0 <6"
+  },
+  "peerDependenciesMeta": {
+    "react-native-adjust": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@priemskiyyy/junction": "workspace:*"
+  },
+  "keywords": [
+    "adjust",
+    "react-native-adjust",
+    "react-native",
+    "ios",
+    "android",
+    "typescript",
+    "junction",
+    "deep-linking"
+  ],
+  "homepage": "https://priemskiyyy.github.io/junction/"
+}
