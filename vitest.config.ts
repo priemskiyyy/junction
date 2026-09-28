@@ -98,6 +98,8 @@ const examples: Record<string, TestProjectConfiguration[]> = {
         name: "example-react",
         include: ["examples/react/src/**/*.test.{ts,tsx}"],
         environment: "jsdom",
+        // Externalized, the icons load their own React copy; inlined, Vite dedupes it with the app's.
+        server: { deps: { inline: ["@phosphor-icons/react"] } },
       },
     },
   ],
