@@ -1,0 +1,62 @@
+{
+  "name": "@priemskiyyy/junction-expo-quick-actions",
+  "version": "0.1.0",
+  "description": "Expo quick action entry points for Junction: the home screen action that launched the app and every later one, over the expo-quick-actions module you inject.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priemskiyyy/junction.git",
+    "directory": "packages/adapters/expo-quick-actions"
+  },
+  "bugs": {
+    "url": "https://github.com/priemskiyyy/junction/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsdown",
+    "lint:typescript": "tsc --noEmit -p .",
+    "lint:eslint": "eslint src",
+    "test:unit": "vitest run --root ../../.. --project expo-quick-actions"
+  },
+  "peerDependencies": {
+    "@priemskiyyy/junction": ">=0.1.0 <0.2",
+    "expo-quick-actions": ">=6.0.0 <7"
+  },
+  "peerDependenciesMeta": {
+    "expo-quick-actions": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@priemskiyyy/junction": "workspace:*"
+  },
+  "keywords": [
+    "expo-quick-actions",
+    "expo",
+    "quick-actions",
+    "ios",
+    "android",
+    "typescript",
+    "junction",
+    "deep-linking"
+  ],
+  "homepage": "https://priemskiyyy.github.io/junction/"
+}
