@@ -1,6 +1,6 @@
 # Changelog
 
-## @priemskiyyy/junction 0.1.0 - Unreleased
+## @priemskiyyy/junction 0.1.0 - 2026-10-30
 
 - First release. `Junction` captures what its sources observe, validates each observation into a typed intent, holds it in a bounded inbox and delivers it to the one consumer that owns it, once that consumer is ready and the right account is signed in.
 - Intents are declared once with `intent(schema, options)`, over any Standard Schema that validates synchronously and produces a JSON object. `account`, `expires`, `attempts`, `version` and `persist` shape what each intent may do.
@@ -13,14 +13,14 @@
 - Passive diagnostics that carry no payload, each event's context typed by its type, `createMockSource` and `createMockStorage` under `./mock`, and the `testIncomingSource` and `testInboxStorage` conformance suites under `./testing`.
 - Only misconfiguration throws, as a `JunctionError` with a `code`. Every operation answers with a result.
 
-## @priemskiyyy/junction-react 0.1.0 - Unreleased
+## @priemskiyyy/junction-react 0.1.0 - 2026-10-30
 
 - First release. `JunctionProvider`, `useIntent`, `useInbox`, `useSourceStatus` and `useJunction`, typed from one `Register` augmentation.
 - `useIntent` keeps its registration across renders and reads the latest handler, `match` and `ready` through `useEffectEvent`, so options change without re-registering.
 - The provider owns no lifetime: it never starts or disposes the Junction. The observing hooks read an empty inbox and idle sources on the server.
 - Requires `@priemskiyyy/junction` 0.1 and React 19.2.
 
-## @priemskiyyy/junction-react-native 0.1.0 - Unreleased
+## @priemskiyyy/junction-react-native 0.1.0 - 2026-10-30
 
 - First release. `linking({ sdk })` over React Native's `Linking` or the `expo-linking` module: the launch URL as the launch read, and every link opened while the app runs.
 

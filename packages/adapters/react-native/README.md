@@ -5,7 +5,7 @@ React Native and Expo entry points for Junction: every Universal Link, App Link 
 ## Installation
 
 ```sh
-pnpm add @priemskiyyy/junction @priemskiyyy/junction-react-native
+pnpm add @priemskiyyy/junction@next @priemskiyyy/junction-react-native@next
 ```
 
 ## Create a Junction

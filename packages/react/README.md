@@ -5,7 +5,7 @@ React bindings for Junction: a provider that publishes one Junction, `useIntent(
 ## Installation
 
 ```sh
-pnpm add @priemskiyyy/junction @priemskiyyy/junction-react
+pnpm add @priemskiyyy/junction@next @priemskiyyy/junction-react@next
 ```
 
 ## Set up
