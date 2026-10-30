@@ -4,6 +4,19 @@
 
 Junction turns Universal Links, App Links, custom schemes, deferred links, notification presses and application dispatches into validated, typed intents. It captures them once, at bootstrap, and lets each feature consume the intents it owns, when it is mounted, ready and signed in to the right account.
 
+## npm preview
+
+The initial npm preview uses the `next` dist-tag:
+
+```sh
+pnpm add @priemskiyyy/junction@next @priemskiyyy/junction-react@next @priemskiyyy/junction-react-native@next zod
+```
+
+The preview includes the core, React binding and React Native Linking source.
+Additional sources are available as source code while device verification
+continues. Native delivery has not been certified on physical devices; see
+[verification](docs/verification.md). The API may change during the preview.
+
 ```ts
 import { intent, Junction } from "@priemskiyyy/junction";
 import { linking } from "@priemskiyyy/junction-react-native";
@@ -69,7 +82,7 @@ Junction does not navigate, create or host links, attribute installs, initialize
 
 ## Status
 
-Version 0.1.0 is built and verified, and not yet published:
+Version 0.1.0 is the initial npm preview for the packages listed above. The catalog also includes sources and integrations still in development:
 
 | Package                                    | What it is                                                                                                                              |
 | ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |

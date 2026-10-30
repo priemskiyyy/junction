@@ -7,7 +7,7 @@ No dependencies, ESM only, no side effects on import.
 ## Installation
 
 ```sh
-pnpm add @priemskiyyy/junction @priemskiyyy/junction-react-native zod
+pnpm add @priemskiyyy/junction@next @priemskiyyy/junction-react-native@next zod
 ```
 
 ## Use it

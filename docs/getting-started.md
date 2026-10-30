@@ -7,7 +7,7 @@ description: "Install Junction, declare an intent and a route, start it at boots
 ## Install
 
 ```sh
-pnpm add @priemskiyyy/junction @priemskiyyy/junction-react @priemskiyyy/junction-react-native zod
+pnpm add @priemskiyyy/junction@next @priemskiyyy/junction-react@next @priemskiyyy/junction-react-native@next zod
 ```
 
 The core, `@priemskiyyy/junction`, has no dependencies; `@priemskiyyy/junction-react` binds it to React, and `@priemskiyyy/junction-react-native` listens to Linking. Any Standard Schema library works for the schemas; the examples use Zod.
